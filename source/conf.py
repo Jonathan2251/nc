@@ -56,7 +56,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TutorialLLVMBackendCpu0'
+project = u'nc'
 copyright = u'2016, Chen Chung-Shu'
 author = u'Chen Chung-Shu'
 
@@ -142,7 +142,7 @@ html_theme = 'haiku'
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-html_title = "Tutorial: Creating an LLVM Backend for the Cpu0 Architecture"
+html_title = "Neural Processor Unit Compiler"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -268,7 +268,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TutorialLLVMBackendCpu0.tex', u'Tutorial: Creating an LLVM Backend for the Cpu0 Architecture',
+    (master_doc, 'nc.tex', u'Neural Processor Unit Compiler',
      u'Chen Chung-Shu', 'manual'),
 ]
 
@@ -304,7 +304,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'TutorialLLVMBackendCpu0', u'Tutorial: Creating an LLVM Backend for the Cpu0 Architecture',
+    (master_doc, 'nc', u'Neural Processor Unit Compiler',
      [u'Chen Chung-Shu'], 1)
 ]
 
