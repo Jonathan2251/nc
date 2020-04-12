@@ -25,6 +25,10 @@ level of features and downsize more image. CNN model used in image recognition.
 
 Concept and data applying in Deap Learning for different models of CNN [#onnxmodelzoo]_.
 
+NPU compiler reference
+----------------------
+
+https://arxiv.org/pdf/2002.03794.pdf
 
 .. [#HungYiLee] https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49
 
