@@ -1,4 +1,4 @@
-.. _sec-gpu:
+.. _sec-npu:
 
 NPU compiler
 ============
@@ -20,5 +20,22 @@ As I remember mlit supports binding shape for unknown at compile-time
 but not always work.
 Lukily, we can customilze by redefining model to binding shape staticlly [20200412].  
 
-[#tfunknownshape] https://pgaleone.eu/tensorflow/2018/07/28/understanding-tensorflow-tensors-shape-static-dynamic/
+
+llvm IR for NPU compiler
+------------------------
+
+.. _conv: 
+.. figure:: ../Fig/npu/conv_onnx.png
+  :align: center
+  :scale: 100%
+
+  Conv operation in onnx file
+
+.. code-block:: llvm
+
+  @weight = global [46 x 1 x 5 [5 x float]] [[[[5 x float] [float 0.05475775524973869, ...], [5 x float] [float ...]], ...]
+  @conv = @llvm.npu1.conv float* @input, float* @weight, ...
+
+
+.. [#tfunknownshape] https://pgaleone.eu/tensorflow/2018/07/28/understanding-tensorflow-tensors-shape-static-dynamic/
 

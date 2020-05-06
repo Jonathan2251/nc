@@ -1,4 +1,4 @@
-.. _sec-gpu:
+.. _sec-model:
 
 Deep learning model
 ===================
