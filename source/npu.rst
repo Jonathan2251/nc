@@ -36,7 +36,8 @@ The gpu of supporting spirv is best candidate until this date 2020/5/12.
 
 Tensorflow rely on api without fixed format such as ONNX [#onnx-fmt]_. 
 Eventually, I think it will hire onnx or come out its own real file format since
-iree is a file format for spirv-gpu. 
+iree is a file format for spirv-gpu and part of mlir function (the major purpose
+of mlir has achieved I think) is connecting to llvm-ir.
 
 llvm IR for NPU compiler
 ------------------------
