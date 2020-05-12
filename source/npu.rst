@@ -37,5 +37,11 @@ llvm IR for NPU compiler
   @conv = @llvm.npu1.conv float* @input, float* @weight, ...
 
 
+Open source project
+-------------------
+
+https://github.com/google/iree
+
+
 .. [#tfunknownshape] https://pgaleone.eu/tensorflow/2018/07/28/understanding-tensorflow-tensors-shape-static-dynamic/
 
