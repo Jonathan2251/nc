@@ -21,6 +21,21 @@ but not always work.
 Lukily, we can customilze by redefining model to binding shape staticlly [20200412].  
 
 
+Tensorflow
+----------
+
+The mechansim of Mlir and iree applied on tensorflow as the following figure is 
+not fitted for off-line, stand alone without server-connection for tunning weight 
+of face detection's purpose npu. It is designed for on-line server-connected npu.
+The gpu of supporting spirv is best candidate until this date 2020/5/12.
+
+.. _iree: 
+.. figure:: ../Fig/npu/IREE-Architecture.svg
+  :align: center
+  :scale: 100%
+
+
+
 llvm IR for NPU compiler
 ------------------------
 
