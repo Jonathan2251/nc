@@ -34,7 +34,9 @@ The gpu of supporting spirv is best candidate until this date 2020/5/12.
   :align: center
   :scale: 100%
 
-
+Tensorflow rely on api without fixed format such as ONNX [#onnx-fmt]_. 
+Eventually, I think it will hire onnx or come out its own real file format since
+iree is a file format for spirv-gpu. 
 
 llvm IR for NPU compiler
 ------------------------
@@ -59,4 +61,6 @@ https://github.com/google/iree
 
 
 .. [#tfunknownshape] https://pgaleone.eu/tensorflow/2018/07/28/understanding-tensorflow-tensors-shape-static-dynamic/
+
+.. [#onnx-fmt] Actually onnx format based on IO api with protobuffer. It has real binary format but may change from version to version. Tensorflow api has no real binary format.
 
