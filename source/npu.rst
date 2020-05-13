@@ -71,20 +71,23 @@ handling mlir input).
 
 With mlir and iree appear on tensorflow as a series of fixed formats in
 tensorflow as section above. The hardware vendors for cloud server AI machine 
-with heterogeneous hardware accelerators will support running tensorflow system 
+with heterogeneous hardware accelerators will run tensorflow system 
 by supporting mlir/iree input format in their compilers more and more.
-So, it is unavoidable that tensorflow system npu vendors have to support
+So, it is unavoidable that tensorflow system's npu vendors have to support
 mlir/iree input format beyond onnx. Or open source software or vendor software 
 appear to do transfer from mlir/iree to onnx. (python in tensorflow api allow 
 unknown type and shape size, so it cannot transer python api to onnx fully).
 
-If lucky, google may hire onnx. Because onnx format is longer than mlir
-in history and format (mlir has mult-level mult-dialect, onnx is easy and better
-to understand, P.S. I don't dig into mlir yet). Many AI models has
-supported onnx file format. For some AI model's formats, tensorflow-onnx open 
-source project [#tf-onnx]_ can convert tensorflow to onnx.
+If lucky, google may hire onnx. Because onnx format is older than mlir
+in history. In addition in aspect of format, mlir has mult-level mult-dialect and 
+more complicate while onnx is easy and better to understand (P.S. I don't dig 
+into mlir yet). 
+Many AI models has supported onnx file format. For some AI model's formats that
+run on tensorflow without supporting onnx, aplly tensorflow-onnx open 
+source project [#tf-onnx]_ can convert tensorflow to onnx partly.
+
 Onnx alliance may release some programs for transfering mlir to onnx for fighting
-agiant mlir-iree growing in npu compiler.
+agiant mlir-iree growing in npu compiler but not at this moment.
 
 For off-line edge npu that stand alone without server-connection
 for tunning weight of face detection's purpose, supprting mlir-iree compiler
