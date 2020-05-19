@@ -107,12 +107,45 @@ https://llvm.org/devmtg/2019-04/talks.html#Tutorial_1
 
 https://llvm.org/devmtg/2019-04/slides/Tutorial-AminiVasilacheZinenko-MLIR.pdf
 
-build mlir:
-https://mlir.llvm.org/getting_started/
+build mlir: https://mlir.llvm.org/getting_started/
 
-run:
-cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast
-...
+.. code-block:: console
+
+  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/build$ cmake -G Ninja ../llvm \
+  >    -DLLVM_ENABLE_PROJECTS=mlir \
+  >    -DLLVM_BUILD_EXAMPLES=ON \
+  >    -DLLVM_TARGETS_TO_BUILD="X86;NVPTX;AMDGPU" \
+  >    -DCMAKE_BUILD_TYPE=Release \
+  >    -DLLVM_ENABLE_ASSERTIONS=ON
+
+  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/build$ cmake --build . --target check-mlir
+  [200/1919] Generating VCSRevision.h
+  -- Found Git: /usr/bin/git (found version "2.17.1") 
+  [1604/1919] Building CXX object tools/mlir/tools/mlir-linalg-ods-gen/CMakeFiles/mlir-linalg-ods-gen.dir/mlir-linalg-ods-gen.cpp.o
+  /home/cschen/llvm/1/llvm-project/mlir/tools/mlir-linalg-ods-gen/mlir-linalg-ods-gen.cpp:935:6: warning: ‘bool {anonymous}::Expression::operator==(const {anonymous}::Expression&) const’ defined but not used [-Wunused-function]
+   bool Expression::operator==(const Expression &e) const {
+        ^~~~~~~~~~
+  [1918/1919] Running the MLIR regression tests
+
+  Testing Time: 9.88s
+    Unsupported Tests:  16
+    Expected Passes  : 465
+
+
+run: https://mlir.llvm.org/docs/Tutorials/Toy/
+
+.. code-block:: console
+
+  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast
+  ...
+  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast 2>&1 | ~/llvm/1/llvm-project/build/bin/FileCheck ast.toy
+  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/llvm-lit ast.toy 
+  -- Testing: 1 tests, 1 workers --
+  PASS: MLIR :: Examples/Toy/Ch1/ast.toy (1 of 1)
+
+  Testing Time: 0.11s
+    Expected Passes: 1
+
 
 
 llvm IR for NPU compiler
