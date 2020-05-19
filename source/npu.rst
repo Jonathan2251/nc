@@ -99,8 +99,20 @@ mlir to onnx
 
 https://www.tensorflow.org/mlir
 
+https://mlir.llvm.org/talks/
 
+https://llvm.org/devmtg/2019-04/talks.html#Tutorial_1
 
+- 3 ppt in llvm tutorials
+
+https://llvm.org/devmtg/2019-04/slides/Tutorial-AminiVasilacheZinenko-MLIR.pdf
+
+build mlir:
+https://mlir.llvm.org/getting_started/
+
+run:
+cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast
+...
 
 
 llvm IR for NPU compiler
