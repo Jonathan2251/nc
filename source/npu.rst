@@ -146,6 +146,7 @@ run: https://mlir.llvm.org/docs/Tutorials/Toy/
   Testing Time: 0.11s
     Expected Passes: 1
 
+The result I run is based on git commit 455ccde1377b3ec32d321eb7c38808fecdf230a8 Date:   Sun May 17 21:00:09 2020 -0400
 
 
 llvm IR for NPU compiler
