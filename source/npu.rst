@@ -30,7 +30,7 @@ accelerators. IREE also provides flexible deployment solutions for the compiled
 ML models [#iree]_ as the following figure.
 
 .. _iree-f: 
-.. figure:: ../Fig/npu/IREE-Architecture.svg
+.. figure:: ../Fig/npu/IREE-Architecture.png
   :align: center
   :scale: 100%
 
