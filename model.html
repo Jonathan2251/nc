@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Deep learning model &mdash; Neural Processor Unit Compiler</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Neural Processor Unit Compiler" href="index.html" />
+    <link rel="next" title="NPU compiler" href="npu.html" />
+    <link rel="prev" title="Table of Contents" href="index.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Neural Processor Unit Compiler</span></a></h1>
+        <h2 class="heading"><span>Deep learning model</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Table of Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="npu.html">NPU compiler</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="deep-learning-model">
+<span id="sec-model"></span><h1>Deep learning model<a class="headerlink" href="#deep-learning-model" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#ai" id="id5">AI</a></li>
+<li><a class="reference internal" href="#cnn" id="id6">CNN</a></li>
+</ul>
+</div>
+<div class="section" id="ai">
+<h2><a class="toc-backref" href="#id5">AI</a><a class="headerlink" href="#ai" title="Permalink to this headline">¶</a></h2>
+<p>Hung-Yi Lee&#8217;s video <a class="footnote-reference" href="#hungyilee" id="id1">[1]</a>.</p>
+</div>
+<div class="section" id="cnn">
+<h2><a class="toc-backref" href="#id6">CNN</a><a class="headerlink" href="#cnn" title="Permalink to this headline">¶</a></h2>
+<p>CNN: They have applications in image and video recognition, recommender systems,
+image classification, medical image analysis, natural language processing, and
+financial time series <a class="footnote-reference" href="#cnnwiki" id="id2">[4]</a>.</p>
+<p>Concept about how to apply Convolution and MaxPool to getting features from image <a class="footnote-reference" href="#selectedpattern" id="id3">[2]</a>.
+Conv+MaxPool -&gt; get features map and downsize image, more Conv+MaxPool can filter image and higher
+level of features and downsize more image. CNN model used in image recognition.</p>
+<p>Concept and data applying in Deap Learning for different models of CNN <a class="footnote-reference" href="#onnxmodelzoo" id="id4">[3]</a>.</p>
+<table class="docutils footnote" frame="void" id="hungyilee" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49">https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="selectedpattern" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://violin-tao.blogspot.com/2017/07/ml-convolutional-neural-network-cnn.html">http://violin-tao.blogspot.com/2017/07/ml-convolutional-neural-network-cnn.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="onnxmodelzoo" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td><a class="reference external" href="https://github.com/onnx/models">https://github.com/onnx/models</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="cnnwiki" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[4]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">https://en.wikipedia.org/wiki/Convolutional_neural_network</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Table of Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="npu.html">NPU compiler</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Chen Chung-Shu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

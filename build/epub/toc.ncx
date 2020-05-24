@@ -18,26 +18,74 @@
     </navPoint>
     <navPoint id="navPoint2" playOrder="2">
       <navLabel>
-        <text>NPU compiler</text>
+        <text>Deep learning model</text>
       </navLabel>
-      <content src="npu.html" />
+      <content src="model.html" />
       <navPoint id="navPoint3" playOrder="2">
         <navLabel>
-          <text>NPU compiler</text>
+          <text>Deep learning model</text>
         </navLabel>
-        <content src="npu.html" />
+        <content src="model.html" />
       </navPoint>
       <navPoint id="navPoint4" playOrder="3">
         <navLabel>
           <text>AI</text>
         </navLabel>
-        <content src="npu.html#ai" />
+        <content src="model.html#ai" />
       </navPoint>
       <navPoint id="navPoint5" playOrder="4">
         <navLabel>
           <text>CNN</text>
         </navLabel>
-        <content src="npu.html#cnn" />
+        <content src="model.html#cnn" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint6" playOrder="5">
+      <navLabel>
+        <text>NPU compiler</text>
+      </navLabel>
+      <content src="npu.html" />
+      <navPoint id="navPoint7" playOrder="5">
+        <navLabel>
+          <text>NPU compiler</text>
+        </navLabel>
+        <content src="npu.html" />
+      </navPoint>
+      <navPoint id="navPoint8" playOrder="6">
+        <navLabel>
+          <text>NPU compiler reference</text>
+        </navLabel>
+        <content src="npu.html#npu-compiler-reference" />
+      </navPoint>
+      <navPoint id="navPoint9" playOrder="7">
+        <navLabel>
+          <text>MLIR and IREE</text>
+        </navLabel>
+        <content src="npu.html#mlir-and-iree" />
+      </navPoint>
+      <navPoint id="navPoint10" playOrder="8">
+        <navLabel>
+          <text>Tensorflow</text>
+        </navLabel>
+        <content src="npu.html#tensorflow" />
+      </navPoint>
+      <navPoint id="navPoint11" playOrder="9">
+        <navLabel>
+          <text>mlir to onnx</text>
+        </navLabel>
+        <content src="npu.html#mlir-to-onnx" />
+      </navPoint>
+      <navPoint id="navPoint12" playOrder="10">
+        <navLabel>
+          <text>llvm IR for NPU compiler</text>
+        </navLabel>
+        <content src="npu.html#llvm-ir-for-npu-compiler" />
+      </navPoint>
+      <navPoint id="navPoint13" playOrder="11">
+        <navLabel>
+          <text>Open source project</text>
+        </navLabel>
+        <content src="npu.html#open-source-project" />
       </navPoint>
     </navPoint>
   </navMap>

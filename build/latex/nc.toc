@@ -1,6 +1,13 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}NPU compiler}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Deep learning model}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}AI}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}CNN}{1}{section.1.2}
-\contentsline {chapter}{\numberline {2}Alternate formats}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Search this website}{5}{chapter.3}
+\contentsline {chapter}{\numberline {2}NPU compiler}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}NPU compiler reference}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}MLIR and IREE}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Tensorflow}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}mlir to onnx}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}llvm IR for NPU compiler}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Open source project}{6}{section.2.6}
+\contentsline {chapter}{\numberline {3}Alternate formats}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Search this website}{11}{chapter.4}
