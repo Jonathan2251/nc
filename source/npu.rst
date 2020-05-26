@@ -30,7 +30,7 @@ accelerators. IREE also provides flexible deployment solutions for the compiled
 ML models [#iree]_ as the following figure.
 
 .. _iree-f: 
-.. figure:: ../Fig/npu/IREE-Architecture.svg
+.. figure:: ../Fig/npu/IREE-Architecture.png
   :align: center
   :scale: 100%
 
@@ -111,14 +111,14 @@ build mlir: https://mlir.llvm.org/getting_started/
 
 .. code-block:: console
 
-  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/build$ cmake -G Ninja ../llvm \
+  ~/llvm/1/llvm-project/build$ cmake -G Ninja ../llvm \
   >    -DLLVM_ENABLE_PROJECTS=mlir \
   >    -DLLVM_BUILD_EXAMPLES=ON \
   >    -DLLVM_TARGETS_TO_BUILD="X86;NVPTX;AMDGPU" \
   >    -DCMAKE_BUILD_TYPE=Release \
   >    -DLLVM_ENABLE_ASSERTIONS=ON
 
-  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/build$ cmake --build . --target check-mlir
+  ~/llvm/1/llvm-project/build$ cmake --build . --target check-mlir
   [200/1919] Generating VCSRevision.h
   -- Found Git: /usr/bin/git (found version "2.17.1") 
   [1604/1919] Building CXX object tools/mlir/tools/mlir-linalg-ods-gen/CMakeFiles/mlir-linalg-ods-gen.dir/mlir-linalg-ods-gen.cpp.o
@@ -136,10 +136,10 @@ run: https://mlir.llvm.org/docs/Tutorials/Toy/
 
 .. code-block:: console
 
-  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast
+  ~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast
   ...
-  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast 2>&1 | ~/llvm/1/llvm-project/build/bin/FileCheck ast.toy
-  cschen@cschen-Aspire-TC-860:~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/llvm-lit ast.toy 
+  ~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/toyc-ch1 ast.toy -emit=ast 2>&1 | ~/llvm/1/llvm-project/build/bin/FileCheck ast.toy
+  ~/llvm/1/llvm-project/mlir/test/Examples/Toy/Ch1$ ~/llvm/1/llvm-project/build/bin/llvm-lit ast.toy 
   -- Testing: 1 tests, 1 workers --
   PASS: MLIR :: Examples/Toy/Ch1/ast.toy (1 of 1)
 
