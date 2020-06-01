@@ -45,7 +45,7 @@ The purpose of mlir is:
 
 The purpose of iree is:
 
-- Connect to gpu with iree-to-spirv.
+- Connect gpu with iree-to-spirv.
 
 Both purpose of mlir and iree is:
 
@@ -168,7 +168,7 @@ npu to do codegen by llvm as follows,
   @conv = @llvm.npu1.conv float* @input, float* @weight, ...
 
 
-Conclusion: Data definition too much and no GPR. Not worth to hire llvm.
+Conclusion: Data definition too much, no GPRs in NPU and the vector size of llvm is power of 2 (1, 2, 4, 8, ...). Not worth to hire llvm.
 
 
 Open source project
