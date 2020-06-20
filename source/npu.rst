@@ -8,10 +8,8 @@ NPU compiler
    :depth: 4
 
 
-NPU compiler reference
-----------------------
-
-https://arxiv.org/pdf/2002.03794.pdf
+Abstract
+--------
 
 Tensorflow support unknown shape [#tfunknownshape]_.
 Though our npu support kernel call where kernel call is a set of 

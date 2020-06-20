@@ -13,6 +13,7 @@ Table of Contents
    :maxdepth: 1
 
    model
+   dlcompiler
    npu
    
 
