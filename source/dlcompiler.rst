@@ -34,6 +34,8 @@ prevent you from implementing the features you need [#gpu4dl]_.
 For instance, if ARM GPU doesn't implement operation "Cosh" on TVM while a DL model
 created from PyTorch generate "Cosh" operation, then it will fail to run
 the DL model though TVM compile PyTorch model into OpenCL.
+Once "Cosh" is implemented with kernel fuction "Cosh" in OpenCL by calling
+GPU's instructions, it can be fixed.
 
 
 .. [#dlcs] https://arxiv.org/pdf/2002.03794.pdf
