@@ -33,7 +33,7 @@ Refine runtime library.
 目前run time的部份都是parse setup.bin來進行的,其實整個flow的控制是在NPU端,
 比較希望改到cpu控制,有需要才跑npu,有點像gpu knernel call的概念
 
-現在都是用模型才能compile,但是其實北來就是個乘加器,所以應該可以用來做其他
+現在都是用模型才能compile,但是其實本來就是個乘加器,所以應該可以用來做其他
 運算加速,只要寫不同的knernel就行了
 
 所以希望做成cpu調度不同的knernel的run time. 如此一來, npu可做非模型運算,
