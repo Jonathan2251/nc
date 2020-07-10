@@ -25,6 +25,12 @@ level of features and downsize more image. CNN model used in image recognition.
 
 Concept and data applying in Deap Learning for different models of CNN [#onnxmodelzoo]_.
 
+
+Book
+----
+
+http://www.deeplearningbook.org/ NTU: 李弘毅 MLDS (Machine Learing Deep + Structure approaches), the trend for future implementation.
+
 Todo
 ----
 
