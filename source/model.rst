@@ -40,8 +40,8 @@ Refine runtime library.
 such as GeMM (General Matrix Multiply).
 
 Our compiler can do CNN, but cannot do LSTM, GRU and attention model because they 
-need run time to decide how many times gemm need to do. Current npu interrput cpu
-cannot finish this, but cpu call npu can do this.
+need run time to decide how many times of GeMM operation need to be done. 
+Current npu interrput cpu cannot finish this, but cpu call npu can do this.
 
 所以用knernel的話,比較可以重複利用weight,還有就是更靈活的控制,這方面你要多研究
 
