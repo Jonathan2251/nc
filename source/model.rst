@@ -54,7 +54,7 @@ RNN: Recurrent Neural Network
 
 LSTM: Long short-term memory
 
-GRU:  LSTM 也有個問題就是執行速度較慢，因此本篇論文的作者在 2014 年提出了 Gated Recurrent Unit，用來加快執行速度及減少記憶體的耗用。[#gru]_ 
+GRU: LSTM 也有個問題就是執行速度較慢，因此本篇論文的作者在 2014 年提出了 Gated Recurrent Unit，用來加快執行速度及減少記憶體的耗用 [#gru]_。李弘毅 GRU [#gru2]_
 
 
 .. [#HungYiLee] https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49
@@ -66,3 +66,5 @@ GRU:  LSTM 也有個問題就是執行速度較慢，因此本篇論文的作者
 .. [#cnnwiki] https://en.wikipedia.org/wiki/Convolutional_neural_network
 
 .. [#gru] https://medium.com/@tengyuanchang/%E6%AF%94%E8%BC%83%E9%95%B7%E7%9F%AD%E6%9C%9F%E8%A8%98%E6%86%B6%E6%A8%A1%E5%9E%8B-lstm-%E8%88%87%E6%94%B9%E8%89%AF%E5%BE%8C%E7%9A%84%E9%81%9E%E6%AD%B8%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B-gru-813dec22ec6d
+
+.. [#gru2] in video 22:55 https://www.youtube.com/watch?v=rTqmWlnwz_0&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49&index=31
