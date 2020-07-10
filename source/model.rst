@@ -25,6 +25,15 @@ level of features and downsize more image. CNN model used in image recognition.
 
 Concept and data applying in Deap Learning for different models of CNN [#onnxmodelzoo]_.
 
+Todo
+----
+
+Read the theory of LSTM, GRU and attention model.
+
+Our compiler can do CNN, but cannot do LSTM, GRU and attention model because they 
+need run time to decide how many times gemm need to do. Current npu interrput cpu
+cannot finish this, but cpu call npu can do this.
+
 
 .. [#HungYiLee] https://www.youtube.com/watch?v=CXgbekl66jc&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49
 
