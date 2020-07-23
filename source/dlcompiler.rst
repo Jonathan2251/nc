@@ -101,6 +101,10 @@ hardwares [#sycl]_. An example here [#sycl-wiki]_.
   :scale: 100%
 
 
+Tools
+-----
+
+Create onnx test file [#onnx-editor]_.
 
 .. [#dlcs] https://arxiv.org/pdf/2002.03794.pdf
 
@@ -115,4 +119,6 @@ hardwares [#sycl]_. An example here [#sycl-wiki]_.
 .. [#sycl] https://www.khronos.org/sycl
 
 .. [#sycl-wiki] https://en.wikipedia.org/wiki/SYCL
+
+.. [#onnx-editor] https://www.youtube.com/watch?v=QZQwmZTfLmI
 
