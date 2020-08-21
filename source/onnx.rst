@@ -1,0 +1,26 @@
+.. _sec-onnx:
+
+ONNX
+====
+
+.. contents::
+   :local:
+   :depth: 4
+
+install
+-------
+
+$ pip install onnx
+
+onnx api
+--------
+
+- copy onnx file: ex. nc/code/copy_onnx.py referenece here [#copy1]_.
+
+- create onnx file: ex. nc/code/create1.py referenece here [#create]_.
+
+
+.. [#copy1] https://github.com/onnx/onnx/issues/2052
+
+.. [#create] https://www.google.com/search?client=ubuntu&hs=bS9&channel=fs&sxsrf=ALeKk00IITG3Dj_IryeytZ_iTJJE3PszMA%3A1597217944046&ei=mJwzX8KZAuiLr7wPr_aq0AU&q=onnx+python+api&oq=onnx+python+api&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIGCAAQCBAeOggIABAHEB4QEzoKCAAQCBAHEB4QE1CAEFiAEGCNHmgAcAB4AIABdIgBjwKSAQMxLjKYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwjCxbvBlJXrAhXoxYsBHS-7CloQ4dUDCAs&uact=5
+

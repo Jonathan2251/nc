@@ -8,10 +8,8 @@ NPU compiler
    :depth: 4
 
 
-NPU compiler reference
-----------------------
-
-https://arxiv.org/pdf/2002.03794.pdf
+Abstract
+--------
 
 Tensorflow support unknown shape [#tfunknownshape]_.
 Though our npu support kernel call where kernel call is a set of 
@@ -45,7 +43,7 @@ The purpose of mlir is:
 
 The purpose of iree is:
 
-- Connect to gpu with iree-to-spirv.
+- Connect gpu with iree-to-spirv.
 
 Both purpose of mlir and iree is:
 
@@ -164,11 +162,22 @@ npu to do codegen by llvm as follows,
 
 .. code-block:: llvm
 
-  @weight = global [46 x 1 x 5 [5 x float]] [[[[5 x float] [float 0.05475775524973869, ...], [5 x float] [float ...]], ...]
-  @conv = @llvm.npu1.conv float* @input, float* @weight, ...
+  @x1 = global [1 x [3 x [120 x [120 x float]]]], align 4
+  @w1 = global [64 x [3 x [7 x [7 x float]]]], align 4
+  @conv = @llvm.npu1.conv float* @x, float* @weight, ...
 
 
-Conclusion: Data definition too much and no GPR. Not worth to hire llvm.
+Conclusion: 
+
+  1. No GPRs in NPU but can get advantage of code-gen by llvm-tblgen tool.
+
+  2. The vector size of llvm is power of 2 (1, 2, 4, 8, ...). But it can be achieved by modifying llvm kernel source data type.
+
+  ref. code/llvm-ex1.c
+
+reference:
+
+  - 5.2.2  Code Generation based on Low-Level IR.The low-level IR adopted by most DL compilers canbe eventually lowered to LLVM IR, and benefits from LLVM’s mature optimizer and code generator.
 
 
 Open source project

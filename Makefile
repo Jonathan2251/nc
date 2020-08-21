@@ -236,10 +236,8 @@ gh-pages:
 	rm -rf build _sources _static _images
 	git checkout master $(GH_PAGES_SOURCES)
 	git reset HEAD
-	make html latexpdf epub
+	make html
 	mv -fv build/html/* ./
-	mv -fv build/latex/nc.pdf "./nc.pdf"
-	mv -fv build/epub/nc.epub "./nc.epub"
 	git add -A
 	git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin gh-pages ; git checkout master
 

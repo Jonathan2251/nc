@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Neural Processor Unit Compiler" href="index.html" />
-    <link rel="next" title="NPU compiler" href="npu.html" />
+    <link rel="next" title="Deep learning compiler" href="dlcompiler.html" />
     <link rel="prev" title="Table of Contents" href="index.html" /> 
   </head>
   <body role="document">
@@ -39,7 +39,7 @@
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="npu.html">NPU compiler</a>&#160;&#160;»
+        <a href="dlcompiler.html">Deep learning compiler</a>&#160;&#160;»
         </p>
 
       </div>
@@ -50,16 +50,18 @@
 <span id="sec-model"></span><h1>Deep learning model<a class="headerlink" href="#deep-learning-model" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#ai" id="id5">AI</a></li>
-<li><a class="reference internal" href="#cnn" id="id6">CNN</a></li>
+<li><a class="reference internal" href="#ai" id="id8">AI</a></li>
+<li><a class="reference internal" href="#cnn" id="id9">CNN</a></li>
+<li><a class="reference internal" href="#book" id="id10">Book</a></li>
+<li><a class="reference internal" href="#todo" id="id11">Todo</a></li>
 </ul>
 </div>
 <div class="section" id="ai">
-<h2><a class="toc-backref" href="#id5">AI</a><a class="headerlink" href="#ai" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">AI</a><a class="headerlink" href="#ai" title="Permalink to this headline">¶</a></h2>
 <p>Hung-Yi Lee&#8217;s video <a class="footnote-reference" href="#hungyilee" id="id1">[1]</a>.</p>
 </div>
 <div class="section" id="cnn">
-<h2><a class="toc-backref" href="#id6">CNN</a><a class="headerlink" href="#cnn" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">CNN</a><a class="headerlink" href="#cnn" title="Permalink to this headline">¶</a></h2>
 <p>CNN: They have applications in image and video recognition, recommender systems,
 image classification, medical image analysis, natural language processing, and
 financial time series <a class="footnote-reference" href="#cnnwiki" id="id2">[4]</a>.</p>
@@ -67,10 +69,34 @@ financial time series <a class="footnote-reference" href="#cnnwiki" id="id2">[4]
 Conv+MaxPool -&gt; get features map and downsize image, more Conv+MaxPool can filter image and higher
 level of features and downsize more image. CNN model used in image recognition.</p>
 <p>Concept and data applying in Deap Learning for different models of CNN <a class="footnote-reference" href="#onnxmodelzoo" id="id4">[3]</a>.</p>
+</div>
+<div class="section" id="book">
+<h2><a class="toc-backref" href="#id10">Book</a><a class="headerlink" href="#book" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.deeplearningbook.org/">http://www.deeplearningbook.org/</a> NTU: 李弘毅 MLDS (Machine Learing Deep + Structure approaches), the trend for future implementation.</p>
+</div>
+<div class="section" id="todo">
+<h2><a class="toc-backref" href="#id11">Todo</a><a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<p>Refine runtime library.</p>
+<p>目前run time的部份都是parse setup.bin來進行的,其實整個flow的控制是在NPU端,
+比較希望改到cpu控制,有需要才跑npu,有點像gpu knernel call的概念</p>
+<p>現在都是用模型才能compile,但是其實本來就是個乘加器,所以應該可以用來做其他
+運算加速,只要寫不同的knernel就行了</p>
+<p>所以希望做成cpu調度不同的knernel的run time. 如此一來, npu可做非模型運算,
+such as GeMM (General Matrix Multiply).</p>
+<p>Our compiler can do CNN, but cannot do LSTM, GRU and attention model because they
+need run time to decide how many times of GeMM operation need to be done.
+Current npu interrput cpu cannot finish this, but cpu call npu can do this.</p>
+<p>所以用knernel的話,比較可以重複利用weight,還有就是更靈活的控制,這方面你要多研究</p>
+<p>你先看看LSTM, GRU and attention model的原理然後給個報告</p>
+<p>reference: 李弘毅 ML Lecture 21-1: Recurrent Neural Network (Part I) and ML
+Lecture 21-2: Recurrent Neural Network (Part II) <a class="footnote-reference" href="#hungyilee" id="id5">[1]</a>.</p>
+<p>RNN: Recurrent Neural Network</p>
+<p>LSTM: Long short-term memory</p>
+<p>GRU: LSTM 也有個問題就是執行速度較慢，因此本篇論文的作者在 2014 年提出了 Gated Recurrent Unit，用來加快執行速度及減少記憶體的耗用 <a class="footnote-reference" href="#gru" id="id6">[5]</a>。李弘毅 GRU <a class="footnote-reference" href="#gru2" id="id7">[6]</a></p>
 <table class="docutils footnote" frame="void" id="hungyilee" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49">https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49</a></td></tr>
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> <a class="reference external" href="https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49">https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="selectedpattern" rules="none">
@@ -91,6 +117,18 @@ level of features and downsize more image. CNN model used in image recognition.<
 <tr><td class="label"><a class="fn-backref" href="#id2">[4]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">https://en.wikipedia.org/wiki/Convolutional_neural_network</a></td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="gru" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><a class="reference external" href="https://medium.com/&#64;tengyuanchang/%E6%AF%94%E8%BC%83%E9%95%B7%E7%9F%AD%E6%9C%9F%E8%A8%98%E6%86%B6%E6%A8%A1%E5%9E%8B-lstm-%E8%88%87%E6%94%B9%E8%89%AF%E5%BE%8C%E7%9A%84%E9%81%9E%E6%AD%B8%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B-gru-813dec22ec6d">https://medium.com/&#64;tengyuanchang/%E6%AF%94%E8%BC%83%E9%95%B7%E7%9F%AD%E6%9C%9F%E8%A8%98%E6%86%B6%E6%A8%A1%E5%9E%8B-lstm-%E8%88%87%E6%94%B9%E8%89%AF%E5%BE%8C%E7%9A%84%E9%81%9E%E6%AD%B8%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B-gru-813dec22ec6d</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="gru2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>in video 22:55 <a class="reference external" href="https://www.youtube.com/watch?v=rTqmWlnwz_0&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49&amp;index=31">https://www.youtube.com/watch?v=rTqmWlnwz_0&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49&amp;index=31</a></td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -103,7 +141,7 @@ level of features and downsize more image. CNN model used in image recognition.<
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="npu.html">NPU compiler</a>&#160;&#160;»
+        <a href="dlcompiler.html">Deep learning compiler</a>&#160;&#160;»
         </p>
 
       </div>

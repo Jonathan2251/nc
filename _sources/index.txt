@@ -13,7 +13,9 @@ Table of Contents
    :maxdepth: 1
 
    model
+   dlcompiler
    npu
+   onnx
    
 
 Alternate formats
