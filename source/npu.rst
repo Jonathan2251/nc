@@ -175,6 +175,10 @@ Conclusion:
 
   ref. code/llvm-ex1.c
 
+reference:
+
+  - 5.2.2  Code Generation based on Low-Level IR.The low-level IR adopted by most DL compilers canbe eventually lowered to LLVM IR, and benefits from LLVM’s mature optimizer and code generator.
+
 
 Open source project
 -------------------
