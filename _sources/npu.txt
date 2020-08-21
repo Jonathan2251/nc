@@ -147,6 +147,29 @@ run: https://mlir.llvm.org/docs/Tutorials/Toy/
 The result I run is based on git commit 455ccde1377b3ec32d321eb7c38808fecdf230a8 Date:   Sun May 17 21:00:09 2020 -0400
 
 
+Support tensorflow
+------------------
+
+Question:
+
+Sean,
+
+As I said, we can always redefine AI model to remove unknown type or dimension at ahead of time compilation to fit static compilation binding, and my AI input models are CNN without loop (it is DAG form). For this kind of models on tensorflow, can it be translated absolutely to mlir form based on what you know? If it can, then I can write converting program for mlir to my npu internal ir to support tensorflow.
+
+Answer:
+
+For programs with those restrictions, converting to MLIR xla_hlo dialect is always possible.
+
+Note that it is always possible to convert a TensorFlow GraphDef into MLIR tensorflow dialect. MLIR is very flexible. But MLIR tensorflow dialect is too general for NPU and needs to be converted to MLIR xla_hlo dialect.
+
+-- Sean Silva
+
+Sean,
+
+Thank you! I am going to pass this information to my boss. We don't study mlir yet. I believe it will take effort and we only have few engineers on compiler taking a lot of works. There other resource such as tensorflow-onnx but only part of supporting tensorflow to onnx converting.
+
+Jonathan
+
 llvm IR for NPU compiler
 ------------------------
 
