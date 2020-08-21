@@ -162,11 +162,18 @@ npu to do codegen by llvm as follows,
 
 .. code-block:: llvm
 
-  @weight = global [46 x 1 x 5 [5 x float]] [[[[5 x float] [float 0.05475775524973869, ...], [5 x float] [float ...]], ...]
-  @conv = @llvm.npu1.conv float* @input, float* @weight, ...
+  @x1 = global [1 x [3 x [120 x [120 x float]]]], align 4
+  @w1 = global [64 x [3 x [7 x [7 x float]]]], align 4
+  @conv = @llvm.npu1.conv float* @x, float* @weight, ...
 
 
-Conclusion: Data definition too much, no GPRs in NPU and the vector size of llvm is power of 2 (1, 2, 4, 8, ...). Not worth to hire llvm.
+Conclusion: 
+
+  1. No GPRs in NPU but can get advantage of code-gen by llvm-tblgen tool.
+
+  2. The vector size of llvm is power of 2 (1, 2, 4, 8, ...). But it can be achieved by modifying llvm kernel source data type.
+
+  ref. code/llvm-ex1.c
 
 
 Open source project
