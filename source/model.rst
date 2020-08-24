@@ -29,7 +29,8 @@ Concept and data applying in Deap Learning for different models of CNN [#onnxmod
 Book
 ----
 
-http://www.deeplearningbook.org/ NTU: 李弘毅 MLDS (Machine Learing Deep + Structure approaches), the trend for future implementation.
+http://www.deeplearningbook.org/ NTU: 李弘毅 MLDS (Machine Learing Deep + 
+Structure approaches), the trend for future implementation.
 
 Todo
 ----
