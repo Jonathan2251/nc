@@ -42,17 +42,18 @@
 <span id="sec-npu"></span><h1>NPU compiler<a class="headerlink" href="#npu-compiler" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#abstract" id="id10">Abstract</a></li>
-<li><a class="reference internal" href="#mlir-and-iree" id="id11">MLIR and IREE</a></li>
-<li><a class="reference internal" href="#tensorflow" id="id12">Tensorflow</a></li>
-<li><a class="reference internal" href="#mlir-to-onnx" id="id13">mlir to onnx</a></li>
-<li><a class="reference internal" href="#support-tensorflow" id="id14">Support tensorflow</a></li>
-<li><a class="reference internal" href="#llvm-ir-for-npu-compiler" id="id15">llvm IR for NPU compiler</a></li>
-<li><a class="reference internal" href="#open-source-project" id="id16">Open source project</a></li>
+<li><a class="reference internal" href="#abstract" id="id12">Abstract</a></li>
+<li><a class="reference internal" href="#mlir-and-iree" id="id13">MLIR and IREE</a></li>
+<li><a class="reference internal" href="#tensorflow" id="id14">Tensorflow</a></li>
+<li><a class="reference internal" href="#mlir-to-onnx" id="id15">mlir to onnx</a></li>
+<li><a class="reference internal" href="#support-tensorflow" id="id16">Support tensorflow</a></li>
+<li><a class="reference internal" href="#onnc" id="id17">ONNC</a></li>
+<li><a class="reference internal" href="#llvm-ir-for-npu-compiler" id="id18">llvm IR for NPU compiler</a></li>
+<li><a class="reference internal" href="#open-source-project" id="id19">Open source project</a></li>
 </ul>
 </div>
 <div class="section" id="abstract">
-<h2><a class="toc-backref" href="#id10">Abstract</a><a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Abstract</a><a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
 <p>Tensorflow support unknown shape <a class="footnote-reference" href="#tfunknownshape" id="id1">[2]</a>.
 Though our npu support kernel call where kernel call is a set of
 commands to npu to deal shape at run time, it is unefficiency.
@@ -61,7 +62,7 @@ but not always work.
 Lukily, we can customilze by redefining model to binding shape staticlly [20200412].</p>
 </div>
 <div class="section" id="mlir-and-iree">
-<h2><a class="toc-backref" href="#id11">MLIR and IREE</a><a class="headerlink" href="#mlir-and-iree" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">MLIR and IREE</a><a class="headerlink" href="#mlir-and-iree" title="Permalink to this headline">¶</a></h2>
 <p>IREE (Intermediate Representation Execution Environment, pronounced as “eerie”)
 is an MLIR-based end-to-end compiler that lowers ML models to a unified IR
 optimized for real-time mobile/edge inference against heterogeneous hardware
@@ -88,7 +89,7 @@ ML models <a class="footnote-reference" href="#iree" id="id2">[1]</a> as the fol
 </ul>
 </div>
 <div class="section" id="tensorflow">
-<h2><a class="toc-backref" href="#id12">Tensorflow</a><a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Tensorflow</a><a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h2>
 <p>The mechansim of Mlir and iree applied on tensorflow as the figure above section
 is not fitted for off-line edge npu that stand alone without server-connection
 for tunning weight of face detection’s purpose.
@@ -123,7 +124,7 @@ for tunning weight of face detection’s purpose, supprting mlir-iree compiler
 may not necessary.</p>
 </div>
 <div class="section" id="mlir-to-onnx">
-<h2><a class="toc-backref" href="#id13">mlir to onnx</a><a class="headerlink" href="#mlir-to-onnx" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">mlir to onnx</a><a class="headerlink" href="#mlir-to-onnx" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.tensorflow.org/mlir">https://www.tensorflow.org/mlir</a></p>
 <p><a class="reference external" href="https://mlir.llvm.org/talks/">https://mlir.llvm.org/talks/</a></p>
 <p><a class="reference external" href="https://llvm.org/devmtg/2019-04/talks.html#Tutorial_1">https://llvm.org/devmtg/2019-04/talks.html#Tutorial_1</a></p>
@@ -168,7 +169,7 @@ may not necessary.</p>
 <p>The result I run is based on git commit 455ccde1377b3ec32d321eb7c38808fecdf230a8 Date:   Sun May 17 21:00:09 2020 -0400</p>
 </div>
 <div class="section" id="support-tensorflow">
-<h2><a class="toc-backref" href="#id14">Support tensorflow</a><a class="headerlink" href="#support-tensorflow" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Support tensorflow</a><a class="headerlink" href="#support-tensorflow" title="Permalink to this headline">¶</a></h2>
 <p>Question:</p>
 <p>Sean,</p>
 <p>As I said, we can always redefine AI model to remove unknown type or dimension at ahead of time compilation to fit static compilation binding, and my AI input models are CNN without loop (it is DAG form). For this kind of models on tensorflow, can it be translated absolutely to mlir form based on what you know? If it can, then I can write converting program for mlir to my npu internal ir to support tensorflow.</p>
@@ -180,13 +181,28 @@ may not necessary.</p>
 <p>Thank you! I am going to pass this information to my boss. We don’t study mlir yet. I believe it will take effort and we only have few engineers on compiler taking a lot of works. There other resource such as tensorflow-onnx but only part of supporting tensorflow to onnx converting.</p>
 <p>Jonathan</p>
 </div>
+<div class="section" id="onnc">
+<h2><a class="toc-backref" href="#id17">ONNC</a><a class="headerlink" href="#onnc" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id10">
+<span id="id9"></span><a class="reference internal image-reference" href="_images/onnc.jpg"><img alt="_images/onnc.jpg" src="_images/onnc.jpg" style="width: 504.0px; height: 378.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">ONNC</span></p>
+</div>
+<ul class="simple">
+<li>Private IR is better than llvm intrinsic IR for non-VLIW (SIMD or MIMD). Stride, memory dependences, …, llvm has not much advantages in this. Private IR is better.</li>
+<li>Support MLIR to private IR in Novemember. Open source tensorflow to onnx has limited operations support only, bad and not good.</li>
+<li>TVM support python interfaces but from TVM -&gt; relay is not good according their experience. From MLIR is better.</li>
+<li>Support MLIR, pytorch, caffe are enough. Future has less AI model tools.</li>
+<li>Run time scheduling customer support.</li>
+</ul>
+<p><a class="reference external" href="https://onnc.ai/">https://onnc.ai/</a></p>
+</div>
 <div class="section" id="llvm-ir-for-npu-compiler">
-<h2><a class="toc-backref" href="#id15">llvm IR for NPU compiler</a><a class="headerlink" href="#llvm-ir-for-npu-compiler" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">llvm IR for NPU compiler</a><a class="headerlink" href="#llvm-ir-for-npu-compiler" title="Permalink to this headline">¶</a></h2>
 <p>Though npu has no general purpose registers GPR, it is possible to apply llvm ir for
 npu to do codegen by llvm as follows,</p>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id11">
 <span id="conv"></span><a class="reference internal image-reference" href="_images/conv_onnx.png"><img alt="_images/conv_onnx.png" src="_images/conv_onnx.png" style="width: 286.0px; height: 201.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Conv operation in onnx file</span></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Conv operation in onnx file</span></p>
 </div>
 <div class="highlight-llvm notranslate"><div class="highlight"><pre><span></span><span class="vg">@x1</span> <span class="p">=</span> <span class="k">global</span> <span class="p">[</span><span class="m">1</span> <span class="k">x</span> <span class="p">[</span><span class="m">3</span> <span class="k">x</span> <span class="p">[</span><span class="m">120</span> <span class="k">x</span> <span class="p">[</span><span class="m">120</span> <span class="k">x</span> <span class="k">float</span><span class="p">]]]],</span> <span class="k">align</span> <span class="m">4</span>
 <span class="vg">@w1</span> <span class="p">=</span> <span class="k">global</span> <span class="p">[</span><span class="m">64</span> <span class="k">x</span> <span class="p">[</span><span class="m">3</span> <span class="k">x</span> <span class="p">[</span><span class="m">7</span> <span class="k">x</span> <span class="p">[</span><span class="m">7</span> <span class="k">x</span> <span class="k">float</span><span class="p">]]]],</span> <span class="k">align</span> <span class="m">4</span>
@@ -209,7 +225,7 @@ npu to do codegen by llvm as follows,</p>
 </div></blockquote>
 </div>
 <div class="section" id="open-source-project">
-<h2><a class="toc-backref" href="#id16">Open source project</a><a class="headerlink" href="#open-source-project" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Open source project</a><a class="headerlink" href="#open-source-project" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>onnx to mlir dialect: <a class="reference external" href="https://github.com/onnx/onnx-mlir">https://github.com/onnx/onnx-mlir</a></li>
 <li>tensorflow to onnx: <a class="reference external" href="https://github.com/onnx/tensorflow-onnx">https://github.com/onnx/tensorflow-onnx</a></li>

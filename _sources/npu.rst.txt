@@ -170,6 +170,30 @@ Thank you! I am going to pass this information to my boss. We don't study mlir y
 
 Jonathan
 
+
+ONNC
+-----
+
+.. _onnc: 
+.. figure:: ../Fig/npu/onnc.jpg
+  :align: center
+  :scale: 25%
+
+  ONNC
+
+- Private IR is better than llvm intrinsic IR for non-VLIW (SIMD or MIMD). Stride, memory dependences, ..., llvm has not much advantages in this. Private IR is better.
+
+- Support MLIR to private IR in Novemember. Open source tensorflow to onnx has limited operations support only, bad and not good.
+
+- TVM support python interfaces but from TVM -> relay is not good according their experience. From MLIR is better.
+
+- Support MLIR, pytorch, caffe are enough. Future has less AI model tools.
+
+- Run time scheduling customer support.
+
+https://onnc.ai/
+
+
 llvm IR for NPU compiler
 ------------------------
 
