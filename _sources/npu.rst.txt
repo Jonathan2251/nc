@@ -191,6 +191,8 @@ ONNC
 
 - Run time scheduling customer support.
 
+- tf-onnx is not sufficient to support tf's operators and bad. So, translate tf through MLIR to ONNC to customer IR is must.
+
 https://onnc.ai/
 
 
