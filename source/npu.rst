@@ -224,9 +224,11 @@ Conclusion:
 
   ref. code/llvm-ex1.c
 
+  3. Though NPU has no GPRs, the memory allocation can be done by adjust instructions order and split instructions (if over NPU's memory) in passes of LLVM IR level.
+
 reference:
 
-  - 5.2.2  Code Generation based on Low-Level IR.The low-level IR adopted by most DL compilers canbe eventually lowered to LLVM IR, and benefits from LLVM’s mature optimizer and code generator.
+  - section 5.2.2  Code Generation based on Low-Level IR.The low-level IR adopted by most DL compilers can be eventually lowered to LLVM IR, and benefits from LLVM’s mature optimizer and code generator [#dlcs]_.
 
 
 Open source project
@@ -255,3 +257,6 @@ Open source project
 .. [#onnx-mlir-sponsor] https://groups.google.com/a/tensorflow.org/forum/#!topic/mlir/2FT4sD8kqTY
 
 .. [#tf-onnx] https://github.com/onnx/tensorflow-onnx
+
+.. [#dlcs] https://arxiv.org/pdf/2002.03794.pdf
+
