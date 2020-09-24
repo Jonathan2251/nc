@@ -7,6 +7,15 @@ ONNX
    :local:
    :depth: 4
 
+viewer
+-------
+
+// netron
+https://lutzroeder.github.io/netron/
+or https://github.com/lutzroeder/netron  // search Browser: Start
+
+Netron app in ubuntu.
+
 install
 -------
 
