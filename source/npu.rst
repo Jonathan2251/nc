@@ -16,7 +16,7 @@ Though our npu support kernel call where kernel call is a set of
 commands to npu to deal shape at run time, it is unefficiency. 
 As I remember mlit supports binding shape for unknown at compile-time
 but not always work.
-Lukily, we can customilze by redefining model to binding shape staticlly [20200412].  
+Luckily, we can customilze by redefining model to binding shape staticlly [20200412]
 
 
 MLIR and IREE

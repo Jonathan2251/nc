@@ -101,6 +101,8 @@ hardwares [#sycl]_. An example here [#sycl-wiki]_.
   :scale: 100%
 
 
+https://github.com/Jonathan2251/nc/OpenCL_SYCL
+
 Tools
 -----
 

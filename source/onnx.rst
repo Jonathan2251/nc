@@ -10,9 +10,9 @@ ONNX
 viewer
 -------
 
-// netron
-https://lutzroeder.github.io/netron/
-or https://github.com/lutzroeder/netron  // search Browser: Start
+- Web for opening onnx https://lutzroeder.github.io/netron/
+
+- Application tool for opening onnx  https://github.com/lutzroeder/netron  // find "Browser: Start" in this page
 
 Netron app in ubuntu.
 
